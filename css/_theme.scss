@@ -200,6 +200,20 @@ header {
 	height: 800px;
 	position: relative;
 	width: 100%;
+	
+	.header_cover {
+		background: $primary;
+		height: 100%;
+		opacity: .7;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+}
+
+header.slideshow {
+	height: auto;
 }
 
 header.home_default_image {
@@ -212,8 +226,33 @@ header.fixed_height {
 	height: 500px;
 }
 
-header.header_mobile_home {
+header.header_mobile_home,
+header.header_page_mobile {
 	display: none;
+	
+	.mobile_header_bar {
+		background: $background;
+		height: 70px;
+		position:relative;
+		z-index:2;
+		
+		img {
+			height: 50px;
+			padding: 10px 0 10px 20px;
+		}
+		
+		h1 {
+			
+			a:link,a:visited {
+				color: $dark_font;
+				display: inline-block;
+				font-size: 24px;
+				font-weight: 400;
+				margin: 25px 10px;
+				text-decoration: none;
+			}
+		}
+	}
 }
 
 header.page_default_image {
@@ -223,22 +262,24 @@ header.page_default_image {
 }
 
 header.header_page {
-	height: 400px;
+	height: 350px;
 	background-size: 100%;
 	background-attachment: fixed;
 	
 	#page_title {
+		position: relative;
+		z-index: 2;
 		
 		h1.heading {
 			color: $light_font;
 			display: block;
 			font-family: $secondary_font;
-			font-size: 42px;
+			font-size: 28px;
 			font-weight: 500;
-			line-height: 48px;
-			letter-spacing: -1px;
-			padding-top: 220px;
-			text-align: center;
+			line-height: 28px;
+			letter-spacing: -.5px;
+			padding-top: 210px;
+			text-align: left;
 			text-shadow: 1px 1px 2px #000000;
 		}
 		
@@ -246,9 +287,10 @@ header.header_page {
 			color: $light_font;
 			display: block;
 			font-size: 18px;
-			line-height: 28px;
+			line-height: 18px;
 			margin: 0 auto;
-			text-align: center;
+			text-align: left;
+			text-transform: none;
 			text-shadow: 1px 1px 2px #000000;
 			width: 600px;
 		}
@@ -257,6 +299,34 @@ header.header_page {
 
 header.header_page.header_page_mobile {
 	display: none;
+}
+
+/* slideshow styling */
+
+.slideshow {
+	
+	.header_cover {
+		display: none;
+	}
+	
+	.metaslider {
+		
+		.flexslider {
+			margin: 0px;
+			
+			ol.flex-control-nav {
+				bottom: 20px;
+				z-index: 2;
+			}
+		}
+		
+		.caption-wrap {
+			background: $primary;
+			height: 100%;
+			opacity: .7;
+			text-indent: -9999px;
+		}
+	}
 }
 
 
@@ -349,11 +419,11 @@ header.header_page.header_page_mobile {
 			
 			a:link,
 			a:visited {
-				color: $light_font;
+				color: $dark_font;
 				display: block;
 				font-size: 24px;
 				font-weight: 500;
-				padding-top: 40px;
+				padding-top: 30px;
 				text-decoration: none;
 				@include transition(.1s);
 			}
@@ -496,7 +566,7 @@ header.header_page.header_page_mobile {
 			a:link,
 			a:visited {
 				color: $dark_font;
-				padding-top: 25px;
+				padding-top: 15px;
 			}
 		}
 	}
@@ -544,10 +614,10 @@ a#mobileclose:visited {
 	height: 40px;
 	line-height: 45px;
 	position: absolute;
-	right: 50px;
+	right: 20px;
 	text-align: center;
 	text-decoration: none;
-	top: 40px;
+	top: 16px;
 	width: 40px;
 	z-index: 4;
 	@include transition(.1s);
@@ -569,7 +639,7 @@ a#mobileclose:active {
 
 a#mobileclose:link,
 a#mobileclose:visited {
-	color: $light_font;
+	color: $primary;
 }
 
 #mobile_nav {
@@ -589,6 +659,7 @@ a#mobileclose:visited {
 			margin-top: 50px;
 			
 			ul {
+				
 				li {
 					padding: 5px 0;
 					
@@ -723,22 +794,24 @@ a#mobileclose:visited {
 }
 
 #home_logo {
-	height: 500px;
+	bottom: 50px;
+	height: 200px;
 	left: 50%;
-	margin-left: -300px;
+	margin-left: -320px;
 	margin-top: -250px;
+	padding: 0px 20px;
 	position: absolute;
-	top: 60%;
 	width: 600px;
+	z-index: 2;
 	
 	#logo_home {
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 		text-align: center;
 		
 		img {
 			height: auto;
 			margin-bottom: 10px;
-			width: 550px;
+			width: 300px;
 		}
 		
 		h1 {
@@ -751,6 +824,7 @@ a#mobileclose:visited {
 				font-weight: 700;
 				margin-bottom: 10px;
 				text-decoration: none;
+				text-shadow: 1px 1px 2px #000000;
 			}
 		}
 		
@@ -758,7 +832,8 @@ a#mobileclose:visited {
 			color: $light_font;
 			font-size: 18px;
 			font-weight: 500;
-			margin: 0px 20px 30px 20px;
+			margin: 0px 0px 10px 0px;
+			text-shadow: 1px 1px 2px #000000;
 		}
 	}
 	
@@ -769,7 +844,7 @@ a#mobileclose:visited {
 			
 			li {
 				display: inline-block;
-				padding: 0px 15px;
+				padding: 0px 15px 0px 0px;
 				
 				a:link,a:visited {
 					color: $light_font;
@@ -779,16 +854,20 @@ a#mobileclose:visited {
 					font-size: .8em;
 					font-weight: 500;
 					letter-spacing: 2px;
-					padding: 15px 30px;
+					padding: 10px 20px;
 					text-decoration: none;
 					text-transform: uppercase;
 					@include transition(.1s);
-					@include border-radius(5px);
+					@include border-radius(1px);
 				}
 				
 				a:hover,a:active {
 					opacity: .7;
 				}
+			}
+			
+			li:last-child {
+				padding: 0px 0px 0px 0px;
 			}
 		}
 	}
@@ -798,13 +877,17 @@ a#mobileclose:visited {
 /* breadcrumbs */
 
 .breadcrumb_wrapper {
-	margin-bottom: 30px;
+	margin-top: 230px;
+	text-align: right;
 	
 	span.breadcrumbs {
-		font-size: 13px;
+		color: $light_font;
+		font-size: 16px;
+		font-weight: 400;
+		text-shadow: .5px .5px 1px $dark_font;
 		
 		a:link,a:visited {
-			color: $primary;
+			color: $accent;
 			font-weight: 500;
 			text-decoration: none;
 			@include transition(.1s);
@@ -816,10 +899,70 @@ a#mobileclose:visited {
 	}
 }
 
+/* main cushion */
+
+.main.home {
+	padding-top: 0;
+	
+	.main_cushion {
+		background: $background;
+		min-height: 20px;
+		padding: 50px 0px;
+		position: relative;
+		top: 0;
+		width: 100%;
+		z-index: 2;
+		
+		.content {
+			margin-bottom: 0px;
+			
+			h1,h2,h3,h4 {
+				color: $primary;
+				font-size: 18px;
+				line-height: 24px;
+				margin-left: 90px;
+			}
+			
+			p {
+				font-size: 14px;
+				line-height: 22px;
+				margin-bottom: 0px;
+				margin-left: 90px;
+			}
+			
+			.icon_wrapper {
+				background: $primary;
+				float: left;
+				height: 50px;
+				margin: 10px;
+				position: relative;
+				width: 50px;
+				@include transform_rotate(45deg);
+				@include border_radius(1px);
+				
+				.icon {
+					color: $light_font;
+					display: block;
+					font-size: 20px;
+					left: 14px;
+					position: absolute;
+					top: 14px;
+					@include transform_rotate(-45deg);
+				}
+			}
+		}
+	}
+	
+	.main_cushion.includes {
+		background: $accent;
+		margin-bottom: 120px;
+	}
+}
+
 /* main */
 
 .main {
-	padding: 120px 0;
+	padding: 120px 0 120px 0;
 	position: relative;
 }
 
@@ -845,25 +988,26 @@ a#mobileclose:visited {
 
 	h1, h2, h3, h4 {
 		color: $dark_font;
-		font-weight: 500;
-		letter-spacing: -1px;
+		font-weight: 400;
+		letter-spacing: -.5px;
+		text-transform: uppercase;
 	}
 	
 	h1 {
 		color: $primary;
-		font-size: 36px;
+		font-size: 28px;
 		margin-bottom: 10px;
 	}
 	
 	h2 {
-		font-size: 28px;
-		line-height: 42px;
+		font-size: 24px;
+		line-height: 32px;
 		margin-bottom: 10px;
 	}
 	
 	h3 {
 		color: $primary;
-		font-size: 22px;
+		font-size: 20px;
 		font-weight: 400;
 		margin-bottom: 10px;
 	}
@@ -972,9 +1116,10 @@ a#mobileclose:visited {
 	
 	h3 {
 		color: $primary;
-		font-size: 22px;
-		font-weight: 400;
+		font-size: 20px;
+		font-weight: 300;
 		margin-bottom: 10px;
+		text-transform: uppercase;
 	}
 	
 	.office_information_wrapper {

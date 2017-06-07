@@ -4,7 +4,7 @@
 	
 	/*
 		@package WordPress
-		@subpackage alderaan
+		@subpackage hoth
 		Template Name: Page - Contact
 	*/
 	 

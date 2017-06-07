@@ -55,14 +55,20 @@ $(document).ready(function() {
 	    $('body').removeClass('disablepagescroll');
 	});
 	
+	$('a#mobileclose').hide();
+	
 	$('a#mobileopen').click( function() { 
 	    $('#mobile_nav').slideToggle();
 	    $('body').addClass('disablepagescroll');
+	    $('a#mobileclose').show();
+	    $('a#mobileopen').hide();
 	});
 	
 	$('a#mobileclose').click( function() { 
 	    $('#mobile_nav').slideToggle();
 	    $('body').removeClass('disablepagescroll');
+	    $('a#mobileclose').hide();
+	    $('a#mobileopen').show();
 	});
 	
 	/* jquery functionality */

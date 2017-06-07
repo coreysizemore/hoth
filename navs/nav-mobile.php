@@ -2,18 +2,24 @@
 	
 	/*
 		@package WordPress
-		@subpackage alderaan
+		@subpackage hoth
 	*/
 	 
 ?>
 
-<a href="#" id="mobileopen"><span class="icon icon-menu"></span></a>
+<div class="mobile_header_bar">
+	
+	<?php get_template_part( 'logos/logo', 'main' ); ?>
+
+	<a href="#" id="mobileopen"><span class="icon icon-menu"></span></a>
+	
+	<a href="#" id="mobileclose"><span class="icon icon-close"></span></a>
+
+</div>
 
 <nav id="mobile_nav">
 	
 	<div class="mobile_nav_wrapper">
-	
-		<a href="#" id="mobileclose"><span class="icon icon-close"></span></a>
 		
 		<nav id="main_nav">
 		

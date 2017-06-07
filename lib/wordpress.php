@@ -45,11 +45,13 @@
 	add_action('after_setup_theme', 'remove_admin_bar');
 	
 	//Remove default Jquery plugin
+/*
 	function myphpinformation_scripts() {
 		if( !is_admin()){
 			wp_deregister_script('jquery');
 		}
 	}
+*/
 	
 	add_action( 'wp_enqueue_scripts', 'myphpinformation_scripts' );
 	

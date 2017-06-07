@@ -2,7 +2,7 @@
 	
 	/*
 		@package WordPress
-		@subpackage alderaan
+		@subpackage hoth
 	*/
 	 
 ?>
@@ -100,20 +100,50 @@
 		
 	</div>
 	
+	
+	
 	<div id="page_title" data-stellar-ratio="0.75">
 		
-		<h1 class="heading"><?php csdd_the_title(); ?></h1>
-		
-		<?php
-
-			if(get_field('page_sub_heading'))
-			{
-				echo '<h2 class="subheading">' . get_field('page_sub_heading') . '</h2>';
-			}
+		<div class="container">
+			
+			<div class="row gutters">
+				
+				<div class="col_6 first">
+					
+					<div class="content">
 						
-		?>
+						<h1 class="heading"><?php csdd_the_title(); ?></h1>
+		
+						<?php
+				
+							if(get_field('page_sub_heading'))
+							{
+								echo '<h2 class="subheading">' . get_field('page_sub_heading') . '</h2>';
+							}
+										
+						?>
+						
+					</div>
+					
+				</div>
+				
+				<div class="col_6 last">
+					
+					<div class="content">
+						
+						<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div class="breadcrumb_wrapper"><span class="breadcrumbs">','</span></div>');} ?>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
 		
 	</div>
+	
+	<div class="header_cover"></div>
 	
 </header>
 
@@ -171,17 +201,45 @@
 	
 	<div id="page_title">
 		
-		<h1 class="heading"><?php csdd_the_title(); ?></h1>
-		
-		<?php
-
-			if(get_field('page_sub_heading'))
-			{
-				echo '<h2 class="subheading">' . get_field('page_sub_heading') . '</h2>';
-			}
+		<div class="container">
+			
+			<div class="row gutters">
+				
+				<div class="col_6 first">
+					
+					<div class="content">
 						
-		?>
+						<h1 class="heading"><?php csdd_the_title(); ?></h1>
+		
+						<?php
+				
+							if(get_field('page_sub_heading'))
+							{
+								echo '<h2 class="subheading">' . get_field('page_sub_heading') . '</h2>';
+							}
+										
+						?>
+						
+					</div>
+					
+				</div>
+				
+				<div class="col_6 last">
+					
+					<div class="content">
+						
+						<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div class="breadcrumb_wrapper"><span class="breadcrumbs">','</span></div>');} ?>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
 		
 	</div>
+	
+	<div class="header_cover"></div>
 	
 </header>

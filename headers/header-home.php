@@ -2,7 +2,7 @@
 	
 	/*
 		@package WordPress
-		@subpackage alderaan
+		@subpackage hoth
 	*/
 	 
 ?>
@@ -63,39 +63,49 @@
 
 <?php
 	
-	if( has_post_thumbnail() ):
+	if( get_field('home_selection','options') == 'full' || get_field('home_selection','options') == 'fixed' ):
 	
-		if( get_field('home_selection', 'options') == 'full' ):
-	
-			echo '<header data-stellar-background-ratio="0.9" class="header_home home_add_image" style="background-image: url('; 
-				
-			the_post_thumbnail_url( 'full' );
+		if( has_post_thumbnail() ):
 		
-			echo ');">';
+			if( get_field('home_selection', 'options') == 'full' ):
+		
+				echo '<header data-stellar-background-ratio="0.9" class="header_home home_add_image" style="background-image: url('; 
+					
+				the_post_thumbnail_url( 'full' );
 			
-		elseif( get_field('home_selection', 'options') == 'fixed' ):
-		
-			echo '<header data-stellar-background-ratio="0.9" class="header_home home_add_image fixed_height" style="background-image: url('; 
+				echo ');">';
 				
-			the_post_thumbnail_url( 'full' );
-		
-			echo ');">';
+			elseif( get_field('home_selection', 'options') == 'fixed' ):
 			
+				echo '<header data-stellar-background-ratio="0.9" class="header_home home_add_image fixed_height" style="background-image: url('; 
+					
+				the_post_thumbnail_url( 'full' );
+			
+				echo ');">';
+				
+			endif;
+			
+		else :
+		
+			if( get_field('home_selection', 'options') == 'full' ):
+		
+				echo '<header data-stellar-background-ratio="0.9" class="header_home home_default_image">';	
+				
+			elseif( get_field('home_selection', 'options') == 'fixed' ):
+			
+				echo '<header data-stellar-background-ratio="0.9" class="header_home home_default_image fixed_height">';
+				
+			endif;
+		
 		endif;
 		
 	else :
 	
-		if( get_field('home_selection', 'options') == 'full' ):
+		echo '<header class="slideshow">';
 	
-			echo '<header data-stellar-background-ratio="0.9" class="header_home home_default_image">';	
-			
-		elseif( get_field('home_selection', 'options') == 'fixed' ):
-		
-			echo '<header data-stellar-background-ratio="0.9" class="header_home home_default_image fixed_height">';
-			
-		endif;
-	
-	endif;
+    	echo do_shortcode("[metaslider id=143]");
+    	
+    endif;
 	
 ?>
 	
@@ -124,6 +134,8 @@
 		</div>
 		
 	</div>
+	
+	<div class="header_cover"></div>
 	
 	<?php if( get_field('home_logo','options')): ?>
 	

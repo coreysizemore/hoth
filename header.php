@@ -2,7 +2,7 @@
 		
 	/*
 		@package WordPress
-		@subpackage alderaan
+		@subpackage hoth
 	*/
 	 
 ?>

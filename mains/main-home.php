@@ -2,14 +2,70 @@
 	
 	/*
 		@package WordPress
-		@subpackage alderaan
+		@subpackage hoth
 	*/
 	 
 ?>
 	
 <?php get_template_part( 'sidebars/sidebar' , 'announcement' ); ?>
 
-<div class="main <?php echo basename(get_permalink()); ?>">
+<div class="main home <?php echo basename(get_permalink()); ?>">
+	
+	<?php
+	
+		if( get_field('display_call_out_boxes') ):
+		
+			if( have_rows('call_out_boxes') ):
+			
+				echo '<div class="main_cushion includes"><div class="container"><div class="row gutters">';
+						
+				while ( have_rows('call_out_boxes') ) : the_row();
+						        
+					echo '<div class="col_4"><div class="content"><div class="callout_wrapper">';
+					
+					if( get_sub_field('page_link') ):
+					
+						echo '<a href="';
+							        
+						the_sub_field('page_link');
+							
+						echo '">';
+							
+						echo '<div class="icon_wrapper"><span class="icon icon-';
+							
+						the_sub_field('icon');
+							        
+						echo '"></span></div></a>';
+						
+					else :
+					
+						echo '<div class="icon_wrapper"><span class="icon icon-';
+							
+						the_sub_field('icon');
+							        
+						echo '"></span></div>';
+					
+					endif;
+					
+					the_sub_field('content');
+					
+					echo '</div></div></div>';
+						
+				endwhile;
+					
+				echo '</div></div></div>';
+							
+			else :
+				
+			endif;
+			
+		else :
+		
+			echo '<div class="main_cushion"></div>';
+			
+		endif;
+		
+	?>
 
 	<?php if( get_field('default_editor')): ?>
 	

@@ -4,7 +4,11 @@
 	header {
 		background-size: 100%;
 		background-attachment: fixed;
-		height: 520px;
+		height: 350px;
+	}
+	
+	header.slideshow {
+		display: none;
 	}
 	
 	header.home_default_image {
@@ -35,10 +39,12 @@
 		#page_title {
 			
 			h1.heading {
-				padding-top: 100px;
+				padding-top: 60px;
+				text-align: center;
 			}
 			
 			h2.subheading {
+				text-align: center;
 				width: 300px;
 			}
 		}
@@ -55,8 +61,8 @@
 	/* home page logo */
 
 	#home_logo {
-		margin-top: 100px;
-		margin-left: -200px;
+		margin-top: 140px;
+		margin-left: -220px;
 		top: 0%;
 		width: 400px;
 		
@@ -67,6 +73,13 @@
 				width: 400px;
 			}
 		}
+	}
+	
+	/* breadcrumbs */
+	
+	.breadcrumb_wrapper {
+		margin-top: 0px;
+		text-align: center;
 	}
 	
 	/* search */
@@ -88,6 +101,33 @@
 	a#mobileclose:link,
 	a#mobileclose:visited {
 		display: block;
+	}
+	
+	/* call out boxes */
+	
+	.main.home {
+		
+		.main_cushion.includes {
+			
+			.col_4 {
+				
+				.content {
+				
+					.callout_wrapper {
+						margin-bottom: 20px;
+					}
+				}
+			}
+			
+			.col_4.last {
+				
+				.content {
+					.callout_wrapper:last-child {
+						margin-bottom: 0px;
+					}
+				}
+			}
+		}
 	}
 	
 	/* content */
