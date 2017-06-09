@@ -624,12 +624,6 @@ a#mobileclose:visited {
 	@include border-radius(20px);
 }
 
-a#mobileopen:link,
-a#mobileopen:visited {
-	background: $nav_bar_bg;
-	border: 1px solid $nav_bar_border;
-}
-
 a#mobileopen:hover,
 a#mobileopen:active,
 a#mobileclose:hover,

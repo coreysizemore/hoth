@@ -9,8 +9,6 @@
 
 <div class="main">
 	
-	<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div class="container"><div class="row gutters"><div class="col_12"><div class="breadcrumb_wrapper"><span class="breadcrumbs">','</span></div></div></div></div>');} ?>
-	
 	<div class="container">
 		
 		<div class="row gutters">

@@ -143,7 +143,11 @@
 		
 	</div>
 	
-	<div class="header_cover"></div>
+	<?php if( get_field('display_home_image_filter','options')): ?>
+	
+		<div class="header_cover"></div>
+	
+	<?php endif; ?>
 	
 </header>
 
@@ -240,6 +244,10 @@
 		
 	</div>
 	
-	<div class="header_cover"></div>
+	<?php if( get_field('display_home_image_filter','options')): ?>
+	
+		<div class="header_cover"></div>
+	
+	<?php endif; ?>
 	
 </header>

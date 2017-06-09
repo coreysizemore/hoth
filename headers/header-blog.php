@@ -7,6 +7,7 @@
 	 
 ?>
 
+
 <?php
 	
 	if( get_field('member_login_bar', 'options') ):
@@ -59,7 +60,7 @@
 	
 	if( has_post_thumbnail() ):
 	
-		echo '<header class="header_page header_page_home page_add_image ' . basename(get_permalink()) . '" data-stellar-background-ratio="0.9" style="background-image: url('; 
+		echo '<header class="header_page header_page_home ' . basename(get_permalink()) . '" data-stellar-background-ratio="0.9" style="background-image: url('; 
 				
 		the_post_thumbnail_url( 'full' );
 		
@@ -99,13 +100,51 @@
 		
 	</div>
 	
+	
+	
 	<div id="page_title" data-stellar-ratio="0.75">
 		
-		<h1 class="heading">Latest News</h1>
+		<div class="container">
+			
+			<div class="row gutters">
+				
+				<div class="col_6 first">
+					
+					<div class="content">
+						
+						<div id="page_title">
 		
-		<h2 class="subheading">Below is our latest news entries.</h2>
+							<h1 class="heading">Latest News</h1>
+							
+							<h2 class="subheading">Below is our latest news entries.</h2>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div class="col_6 last">
+					
+					<div class="content">
+						
+						<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div class="breadcrumb_wrapper"><span class="breadcrumbs">','</span></div>');} ?>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
 		
 	</div>
+	
+	<?php if( get_field('display_home_image_filter','options')): ?>
+	
+		<div class="header_cover"></div>
+	
+	<?php endif; ?>
 	
 </header>
 
@@ -163,10 +202,46 @@
 	
 	<div id="page_title">
 		
-		<h1 class="heading">Latest News</h1>
+		<div class="container">
+			
+			<div class="row gutters">
+				
+				<div class="col_6 first">
+					
+					<div class="content">
+						
+						<div id="page_title">
 		
-		<h2 class="subheading">Below is our latest news entries.</h2>
+							<h1 class="heading">Latest News</h1>
+							
+							<h2 class="subheading">Below is our latest news entries.</h2>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div class="col_6 last">
+					
+					<div class="content">
+						
+						<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div class="breadcrumb_wrapper"><span class="breadcrumbs">','</span></div>');} ?>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
 		
 	</div>
+	
+	<?php if( get_field('display_home_image_filter','options')): ?>
+	
+		<div class="header_cover"></div>
+	
+	<?php endif; ?>
 	
 </header>
