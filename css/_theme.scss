@@ -519,7 +519,7 @@ header.header_page.header_page_mobile {
 		li.menu-item-has-children {
 			& > a:link,
 			& > a:visited {
-				background: url('cornerstone/features/light_arrow_down.png') no-repeat;
+				background: url('cornerstone/features/arrow_down.png') no-repeat;
 				background-position: right center;
 				background-size: 18px 18px;
 				padding-right: 20px;
@@ -585,6 +585,9 @@ header.header_page.header_page_mobile {
 				li {
 					a:link,a:visited {
 						color: $light_font;
+						display: block;
+  						padding: 10px 20px;
+  						width: 100%;
 					}
 				}
 			}
@@ -750,6 +753,11 @@ a#mobileclose:visited {
 			  	font-weight: 300;
 			  	opacity: .5;
 			}
+		}
+		
+		.bottom_spacing {
+			display: block;
+			height: 100px;
 		}
 	}
 }
