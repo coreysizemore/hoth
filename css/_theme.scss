@@ -338,7 +338,7 @@ header.header_page.header_page_mobile {
 	position: absolute;
 	top: 0px;
 	width: 100%;
-	z-index: 2;
+	z-index: 3;
 	
 	ul {
 		
@@ -1744,7 +1744,7 @@ footer {
 				font-family: $secondary_font;
 				font-size: 14px;
 				font-weight: 300;
-				line-height: 28px;
+				line-height: 18px;
 				letter-spacing: 1px;
 				text-decoration: none;
 				@include transition(.1s);
