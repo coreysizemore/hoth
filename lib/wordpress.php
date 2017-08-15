@@ -16,10 +16,9 @@
 	}
 	add_action( 'init', 'register_my_menus' );
 	
-	
 	// Changing excerpt length
 	function new_excerpt_length($length) {
-	return 28;
+		return 20;
 	}
 	add_filter('excerpt_length', 'new_excerpt_length');
 	
