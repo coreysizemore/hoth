@@ -42,13 +42,13 @@ $light_font: #ffffff;
 $dark_font: #303133;
 $gray_font: #777777;
 
-/* cornerstone framework */
-@import 'cornerstone/cornerstone_v3.1';
+/* csstone framework */
+@import 'csstone/csstone_v1.1';
 
 /* features, mixins */
 
-@import 'cornerstone/mixins';
-@import 'cornerstone/features';
+@import 'csstone/mixins';
+@import 'csstone/features';
 
 /* theme */
 
