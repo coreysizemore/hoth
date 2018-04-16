@@ -17,11 +17,35 @@
 		
 			if( have_rows('call_out_boxes') ):
 			
+				$count = count(get_field('call_out_boxes'));
+			
 				echo '<div class="main_cushion includes"><div class="container"><div class="row gutters">';
 						
 				while ( have_rows('call_out_boxes') ) : the_row();
+				
+					if($count == 1):
 						        
-					echo '<div class="col_4"><div class="content"><div class="callout_wrapper">';
+						echo '<div class="col_12">';
+						
+					elseif($count == 2):
+					
+						echo '<div class="col_6">';
+						
+					elseif($count == 3):
+					
+						echo '<div class="col_4">';
+						
+					elseif($count == 4):
+					
+						echo '<div class="col_3">';
+						
+					else :
+					
+						echo '<div class="col_12">';
+						
+					endif;
+					
+					echo '<div class="content"><div class="callout_wrapper">';
 					
 					if( get_sub_field('page_link') ):
 					
@@ -237,37 +261,18 @@
 
 <?php if( get_field('parallax_feature')): ?>
 
-	<?php if( get_field('parallax_image') ): ?>
-
-		<div class="parallax parallax-home" data-stellar-background-ratio="0.15" style="background-image: url(<?php the_field('parallax_image'); ?>)">
-	
-			<?php
-		
-				if(get_field('parallax_content'))
-				{
-					echo '<div class="filter">' . get_field('parallax_content') . '</div>';
-				}
-											
-			?>
-	
-		</div>
-	
-	<?php else : ?>
-	
-		<div class="parallax parallax-home parallax_default_image" data-stellar-background-ratio="0.15">
+	<div class="parallax parallax-home parallax_default_image" data-stellar-background-ratio="0.15">
 			
-			<?php
+		<?php
 		
-				if(get_field('parallax_content'))
-				{
+			if(get_field('parallax_content'))
+			{
 					echo '<div class="filter">' . get_field('parallax_content') . '</div>';
-				}
+			}
 											
-			?>
+		?>
 		
-		</div>
-	
-	<?php endif; ?>
+	</div>
 
 <?php endif; ?>
 	
@@ -438,52 +443,6 @@
 			echo '</div>';
 				
 		endif; 
-			
-	?>
-
-	<?php
-		
-		if( get_field('display_resources') ):
-		
-			if( have_rows('gallery_item', 'options') ):
-	
-				echo '<div class="resources"><div class="container"><div class="row"><div class="col_12">';
-				
-				if( get_field('resources_title', 'options') ):
-				
-					echo '<h2>';
-					
-					the_field('resources_title', 'options');
-					
-					echo '</h2>';
-				
-				endif;
-						
-				while ( have_rows('gallery_item', 'options') ) : the_row();
-						        
-					echo '<div class="resources_wrapper"><a href="';
-					
-					the_sub_field('url', 'options');
-					
-					echo '" target="_blank"><div class="resources_item" style="background-image: url(';
-						        
-					the_sub_field('image', 'options');
-					
-					echo ');"><div class="filter"><span class="text"><span class="icon icon-expand"></span>';
-					
-					the_sub_field('title', 'options');
-					
-					echo '</span></div></div></a></div>';
-						
-				endwhile;
-				
-				echo '</div></div></div></div>';
-							
-			else :
-						
-			endif;
-		
-		endif;
 			
 	?>
 

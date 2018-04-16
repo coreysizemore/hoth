@@ -62,51 +62,85 @@
 ?>
 
 <?php
+
+	if( get_field('home_selection', 'options') == 'full' ):
 	
-	if( get_field('home_selection','options') == 'full' || get_field('home_selection','options') == 'fixed' ):
+		echo '<header data-stellar-background-ratio="0.9" class="header_home home_default_image">';	
+			
+	elseif( get_field('home_selection', 'options') == 'fixed' ):
+		
+		echo '<header data-stellar-background-ratio="0.9" class="header_home home_default_image fixed_height">';
+		
+	elseif( get_field('home_selection', 'options') == 'slide' ):
 	
-		if( has_post_thumbnail() ):
+		echo '<header class="header_home home_default_image slideshow"><div id="slideshow_wrapper">';
 		
-			if( get_field('home_selection', 'options') == 'full' ):
+		$slides = get_field('slideshow','options');
 		
-				echo '<header data-stellar-background-ratio="0.9" class="header_home home_add_image" style="background-image: url('; 
+		$counter = 1;
+		
+		if( $slides ):
+			
+			foreach( $slides as $slide ):
+			
+				echo '<div data-stellar-background-ratio="0.9" class="image_slide slide_' . $counter . '">';
+				
+				if( $slide['caption'] ):
+				
+					echo '<div data-stellar-ratio="0.75" class="caption">';
+				
+					echo $slide['caption'];
 					
-				the_post_thumbnail_url( 'full' );
-			
-				echo ');">';
-				
-			elseif( get_field('home_selection', 'options') == 'fixed' ):
-			
-				echo '<header data-stellar-background-ratio="0.9" class="header_home home_add_image fixed_height" style="background-image: url('; 
+					echo '</div>';
 					
-				the_post_thumbnail_url( 'full' );
-			
-				echo ');">';
+				endif;
 				
-			endif;
-			
-		else :
-		
-			if( get_field('home_selection', 'options') == 'full' ):
-		
-				echo '<header data-stellar-background-ratio="0.9" class="header_home home_default_image">';	
+				echo '</div>';
 				
-			elseif( get_field('home_selection', 'options') == 'fixed' ):
+				$counter++;
 			
-				echo '<header data-stellar-background-ratio="0.9" class="header_home home_default_image fixed_height">';
+			endforeach;
 				
-			endif;
-		
 		endif;
 		
-	else :
+		echo '</div>';
+		
+	elseif( get_field('home_selection', 'options') == 'slidefix' ):
 	
-		echo '<header class="slideshow">';
-	
-    	echo do_shortcode("[metaslider id=143]");
-    	
-    endif;
-	
+		echo '<header class="header_home home_default_image slideshow slideshow_fixed"><div id="slideshow_wrapper">';
+		
+		$slides = get_field('slideshow','options');
+		
+		$counter = 1;
+		
+		if( $slides ):
+			
+			foreach( $slides as $slide ):
+			
+				echo '<div data-stellar-background-ratio="0.9" class="image_slide slide_' . $counter . '">';
+				
+				if( $slide['caption'] ):
+				
+					echo '<div data-stellar-ratio="0.75" class="caption">';
+				
+					echo $slide['caption'];
+					
+					echo '</div>';
+					
+				endif;
+				
+				echo '</div>';
+				
+				$counter++;
+			
+			endforeach;
+				
+		endif;
+		
+		echo '</div>';
+			
+	endif;
+
 ?>
 	
 	<?php get_template_part( 'sidebars/sidebar' , 'contact-information' ); ?>	
@@ -176,31 +210,7 @@
 </header>
 
 
-<?php
-	
-	if( get_field('mobile_header_image') ):
-	
-		echo '<header class="header_mobile_home" style="background-image: url('; 
-				
-		the_field('mobile_header_image');
-		
-		echo ');">';
-		
-	elseif( has_post_thumbnail() ):
-	
-		echo '<header class="header_mobile_home" style="background-image: url('; 
-				
-		the_post_thumbnail_url( 'full' );
-		
-		echo ');">';
-		
-	else :
-	
-		echo '<header class="header_mobile_home home_default_image">';	
-	
-	endif;
-	
-?>
+<header class="header_mobile_home home_default_image">
 	
 	<?php get_template_part( 'navs/nav', 'mobile' ); ?>
 	
